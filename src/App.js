@@ -2,7 +2,13 @@ import Topbar from "./components/topbar/Topbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import "./app.css";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Redirect,
+  Navigate,
+} from "react-router-dom";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
@@ -14,6 +20,8 @@ import OrdersList from "./pages/orders/OrdersList";
 import ListOrderSearch from "./pages/orders/ListOrderSearch";
 import WidgetLg from "./components/widgetLg/WidgetLg";
 import ProcessOrder from "./pages/orders/ProcessOrder";
+import Login from "./pages/login/Login";
+import PrivateRoute from "./pages/login/PrivateRoute";
 
 function App() {
   return (
@@ -35,6 +43,7 @@ function App() {
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/reports" element={<Analytics />} />
             <Route path="/reports" element={<WidgetLg />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </div>

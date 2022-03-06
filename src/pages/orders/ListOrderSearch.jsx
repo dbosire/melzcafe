@@ -31,21 +31,15 @@ export default function ListOrderSearch() {
   let inputHandler = (e) => {
     e.preventDefault();
     //convert input text to lower case
-    //var lowerCase = e.target.value.toLowerCase();
     var upperCase = e.target.value.toUpperCase();
-    console.log("in ListOrders");
-    console.log(orderslist);
-    console.log("in ListOrders");
-    console.log(upperCase);
+
     if (!upperCase) {
       setFilteredList(orderslist);
     } else {
       upperCase = parseInt(upperCase);
       if (Number.isInteger(upperCase)) {
-        console.log("is a number");
         setFilteredList(orderslist.filter((data) => data.id === upperCase));
       } else {
-        console.log("is !number");
         setFilteredList(
           orderslist.filter(
             (data) => data.mpesa_code.toUpperCase() === upperCase
@@ -53,14 +47,7 @@ export default function ListOrderSearch() {
         );
       }
     }
-
-    /* setFilteredList(
-      orderslist.filter((data) => data.mpesa_code.includes(upperCase))
-    );*/
   };
-  console.log("xxxxxxxxxxxx");
-  console.log(filteredList);
-
   return (
     <div className="userList">
       <div className="main">
